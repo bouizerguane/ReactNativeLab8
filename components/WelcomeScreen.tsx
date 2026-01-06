@@ -1,55 +1,39 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput } from 'react-native';
+import React from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function WelcomeScreen() {
-  
-  const [firstName, onChangeFirstName] = useState<string>('');
-
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.headerText}>Welcome to My App</Text>
-      <Text style={styles.regularText}>
-        This is a simple demo application. Please enter your name below.
-      </Text>
-
-      <TextInput
-        style={styles.inputBox}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-        placeholder="First Name"
-      />
+      <View style={styles.headerWrapper}>
+        <Image
+          source={require("../img/logo.png")} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.headerText}>EduFlow</Text>
+      </View>
+      <Text style={styles.subtitle}>La gestion scolaire, simlement intélligente</Text>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333333',
+  container: { flex: 1, backgroundColor: "#EDEFEE" },
+  headerWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 16,
+    backgroundColor: "#EE9972",
   },
-  headerText: {
-    padding: 40,
-    fontSize: 30,
-    color: '#EDEFEE',
-    textAlign: 'center',
-  },
-  regularText: {
-    fontSize: 24,
-    padding: 20,
-    marginVertical: 8,
-    color: '#EDEFEE',
-    textAlign: 'center',
-  },
-  inputBox: {
-    height: 40,
-    marginHorizontal: 20,
-    marginVertical: 12,
-    paddingHorizontal: 10,
+  logo: {
+    width: 60,
+    height: 60,
+    borderRadius: 12, 
+    marginRight: 12,
+    backgroundColor: "white",
     borderWidth: 1,
-    borderColor: '#EDEFEE',
-    borderRadius: 8,
-    fontSize: 18,
-    backgroundColor: '#FFFFFF',
-    color: '#000000',
+    borderColor: "black",
   },
+  headerText: { fontSize: 24, fontWeight: "bold", color: "black" },
+  subtitle: { padding: 16, fontSize: 18, color: "black", textAlign: "center" },
 });

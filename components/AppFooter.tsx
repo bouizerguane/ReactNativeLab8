@@ -4,22 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function AppFooter() {
   return (
     <View style={styles.container}>
-      <Text style={styles.footerText}>
-        All rights reserved by My Restaurant, 2026
-      </Text>
+      <Text style={styles.footerText}>All rights reserved by EduFlow, 2026</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#EE9972', // Orange corail
-    paddingVertical: 10,
-  },
-  footerText: {
-    textAlign: 'center',
-    fontSize: 14,
-    fontStyle: 'italic',
-    color: '#333333',
-  },
+  container: { backgroundColor: '#EE9972', paddingVertical: 10 },
+  footerText: { textAlign: 'center', fontSize: 14, fontStyle: 'italic', color: '#333333' },
 });
